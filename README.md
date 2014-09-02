@@ -7,12 +7,13 @@ This is a small example on how to use the Lovetoys in combination with love2d.
 
 ## Entity:
 [main.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/main.lua) Line 102-108: How to create an entity, add Components to it and finally add the entity to the engine.  
-[mainKeySystem.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/systems/event/mainKeySystem.lua) Line 44: How to remove an Entity.  
+[mainKeySystem.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/systems/event/mainKeySystem.lua) Line 44: How to remove an Entity from the engine.  
 
 ## System:
 [circleDrawSystem.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/systems/graphic/circleDrawSystem.lua): Basic Structure of a system.  
 [main.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/main.lua) Line 94: How to add a system to the engine.  
 [mainKeySystem.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/systems/event/mainKeySystem.lua) Line 47: How to remove a System.  
+[multipleRequirementsSystem](https://github.com/Lovetoys/Lovetoys-examples/blob/master/systems/test/multipleRequirementsSystem.lua) Line 5-19: How to write a System with multiple component requirements and how to access the different target lists.
 
 ## Engine:
 [main.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/main.lua) Line 54: How to create an engine.  
