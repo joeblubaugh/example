@@ -12,12 +12,12 @@ This is a small example on how to use the Lovetoys in combination with love2d.
 ## System:
 [circleDrawSystem.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/systems/graphic/circleDrawSystem.lua): Basic Structure of a system.  
 [main.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/main.lua) Line 94: How to add a system to the engine.  
+[mainKeySystem.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/systems/event/mainKeySystem.lua) Line 47: How to remove a System.  
 
 ## Engine:
 [main.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/main.lua) Line 54: How to create an engine.  
 Line 116: Engine update function.  
 Line 126: Engine draw function.  
-[mainKeySystem.lua](https://github.com/Lovetoys/Lovetoys-examples/blob/master/systems/event/mainKeySystem.lua) Line 47: How to remove a System.  
 
 
 ## Eventmanagement:
