@@ -1,5 +1,5 @@
 -- Importing lovetoys
-require("lib/lovetoys/src/engine")
+require("lib/lovetoys/lovetoys")
 
 -- Logic systems
 require("systems/logic/timerSystem")
