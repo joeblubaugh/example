@@ -44,8 +44,8 @@ function MainKeySystem:fireEvent(event)
             engine:removeEntity(entity)
         end
     elseif event.key == "e" then
-        engine:removeSystem("CircleDrawSystem") 
+        engine:stopSystem("CircleDrawSystem") 
     elseif event.key == "w" then
-        engine:addSystem(CircleDrawSystem(), "draw", 2) 
+        engine:startSystem(CircleDrawSystem(), "draw", 2) 
     end
 end

@@ -83,19 +83,19 @@ function love.load()
     collisionmanager:addCollisionAction(polygon.component1, polygon.component2, polygon)
 
     -- Logic (update) systems are beeing added to the engine
-    engine:addSystem(TimerSystem(), "logic", 1)
-    engine:addSystem(PhysicsPositionSyncSystem(), "logic", 2)
-    engine:addSystem(ParticleUpdateSystem(), "logic", 3)
+    engine:addSystem(TimerSystem())
+    engine:addSystem(PhysicsPositionSyncSystem())
+    engine:addSystem(ParticleUpdateSystem())
     
 
     -- Drawing systems are beeing added to the engine
-    engine:addSystem(PolygonDrawSystem(), "draw", 1)
-    engine:addSystem(ParticleDrawSystem(), "draw", 2)
-    engine:addSystem(CircleDrawSystem(), "draw", 3)
-    engine:addSystem(TimeDrawSystem(), "draw", 5)
+    engine:addSystem(PolygonDrawSystem())
+    engine:addSystem(ParticleDrawSystem())
+    engine:addSystem(CircleDrawSystem())
+    engine:addSystem(TimeDrawSystem())
 
-    -- Passive System beeing added. This systems draw or update function won't be called
-    engine:addSystem(TestSystem(), "passive", 1000)
+    -- Systems with no called function. But it still gets all required entities
+    engine:addSystem(TestSystem())
 
     -- Creation and adding of some Entities
     for i = 1, 20, 1 do
