@@ -16,7 +16,7 @@ end
 
 function MultipleRequirementsSystem:requires()
 
-    return {pool1 = {"PositionComponent"}, pool2 = {"TimeComponent"}, pool3 = {"TimeComponent", "PositionComponent"}}
+    return {pool1 = {"Position"}, pool2 = {"Timing"}, pool3 = {"Timing", "Position"}}
 end
 
 function MultipleRequirementsSystem:printStuff()

@@ -1,15 +1,15 @@
 PolygonCircleCollision = class("PolygonCircleCollision")
 
 function PolygonCircleCollision:__init()
-    self.component1 = "DrawablePolygonComponent"
-    self.component2 = "PhysicsComponent"
+    self.component1 = "DrawablePolygon"
+    self.component2 = "Physic"
 end
 
 function PolygonCircleCollision:action(entities)
     local newParticle = Entity()
-    newParticle:add(ParticleComponent(particle1, 1000))
+    newParticle:add(Particle(particle1, 1000))
 
-    local particle = newParticle:get("ParticleComponent").particle
+    local particle = newParticle:get("Particle").particle
     particle:setEmissionRate(300)
     particle:setSpeed(10, 10)
     particle:setSizes(0.1, 0.15)
@@ -32,8 +32,8 @@ function PolygonCircleCollision:action(entities)
 end
 
 function getMid(entity1, entity2)
-    local x1, y1 = entity1:get("PositionComponent").x, entity1:get("PositionComponent").y
-    local x2, y2 = entity2:get("PositionComponent").x, entity2:get("PositionComponent").y
+    local x1, y1 = entity1:get("Position").x, entity1:get("Position").y
+    local x2, y2 = entity2:get("Position").x, entity2:get("Position").y
 
     return (x1 + x2)/2 , (y1 + y2)/2 
 end

@@ -3,7 +3,7 @@
 This is a small example on how to use the Lovetoys in combination with love2d.  
 
 ## Component:
-[positionComponent.lua](https://github.com/lovetoys/Lovetoys-examples/blob/master/components/physic/positionComponent.lua): Basic Structure of a component.
+[position.lua](https://github.com/lovetoys/Lovetoys-examples/blob/master/components/physic/position.lua): Basic Structure of a component.
 
 ## Entity:
 [main.lua](https://github.com/lovetoys/Lovetoys-examples/blob/master/main.lua) Line 102-108: How to create an entity, add Components to it and finally add the entity to the engine.  

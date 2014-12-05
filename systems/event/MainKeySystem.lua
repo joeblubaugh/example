@@ -5,7 +5,7 @@ function MainKeySystem:fireEvent(event)
         for i = 1, 20, 1 do
             entity = Entity()
             local x, y = love.math.random(0, 1000), love.math.random(0, 600)
-            entity:add(PositionComponent(x, y))
+            entity:add(Position(x, y))
 
             local body = love.physics.newBody(world, x, y, "dynamic")
             local shape = love.physics.newCircleShape(5) 
@@ -14,7 +14,7 @@ function MainKeySystem:fireEvent(event)
             fixture:setUserData(entity)
             body:setMass(2)
                 
-            entity:add(PhysicsComponent(body, fixture, shape ))
+            entity:add(Physic(body, fixture, shape ))
             entity:add(IsCircle())
 
             engine:addEntity(entity)
@@ -23,8 +23,8 @@ function MainKeySystem:fireEvent(event)
         for i = 1, 20, 1 do
             entity = Entity()
             local x, y = love.math.random(0, 1000), love.math.random(0, 600)
-            entity:add(TimeComponent(love.math.random(0, 5000)))
-            entity:add(PositionComponent(x, y))
+            entity:add(Timing(love.math.random(0, 5000)))
+            entity:add(Position(x, y))
 
             local body = love.physics.newBody(world, x, y, "dynamic")
             local shape = love.physics.newCircleShape(5) 
@@ -33,14 +33,14 @@ function MainKeySystem:fireEvent(event)
             fixture:setRestitution(1)  
             body:setMass(2)
                 
-            entity:add(PhysicsComponent(body, fixture, shape ))
+            entity:add(Physic(body, fixture, shape ))
             entity:add(IsCircle())
 
             engine:addEntity(entity)
         end
     elseif  event.key == "d" then
         for index, entity in pairs(engine:getEntityList("IsCircle")) do
-            entity:get("PhysicsComponent").body:destroy()
+            entity:get("Physic").body:destroy()
             engine:removeEntity(entity)
         end
     elseif event.key == "e" then

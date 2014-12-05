@@ -22,7 +22,7 @@ function TestSystem:fireEvent(event)
         print("Adding test entities 1")
         for i = 1, 15, 1 do
             entity = Entity()
-            entity:add(TimeComponent())
+            entity:add(Timing())
             engine:addEntity(entity)
             table.insert(newEntities, entity)
         end
@@ -30,7 +30,7 @@ function TestSystem:fireEvent(event)
         print("Adding test entities 2")
         for i = 1, 5, 1 do
             entity = Entity()
-            entity:add(PositionComponent(100, 20*i))
+            entity:add(Position(100, 20*i))
             engine:addEntity(entity)
             table.insert(newEntities, entity)
         end

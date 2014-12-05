@@ -2,50 +2,50 @@
 require("lib/lovetoys/lovetoys")
 
 -- Logic systems
-require("systems/logic/timerSystem")
-require("systems/logic/physicsPositionSyncSystem")
+require("systems/logic/TimerSystem")
+require("systems/logic/PhysicsPositionSyncSystem")
 
 -- Graphic systems
-require("systems/graphic/circleDrawSystem")
-require("systems/graphic/polygonDrawSystem")
-require("systems/graphic/timeDrawSystem")
+require("systems/graphic/CircleDrawSystem")
+require("systems/graphic/PolygonDrawSystem")
+require("systems/graphic/TimeDrawSystem")
 
 -- Event systems
-require("systems/event/mainKeySystem")
+require("systems/event/MainKeySystem")
 
 -- Particle systems
-require("systems/particle/particleDrawSystem")
-require("systems/particle/particleUpdateSystem")
+require("systems/particle/ParticleDrawSystem")
+require("systems/particle/ParticleUpdateSystem")
 
 -- Testing and debugging systems
-require("systems/test/testSystem")
-require("systems/test/multipleRequirementsSystem")
+require("systems/test/TestSystem")
+require("systems/test/MultipleRequirementsSystem")
 
 -- Physic components
-require("components/physic/physicsComponent")
-require("components/physic/positionComponent")
+require("components/physic/Physic")
+require("components/physic/Position")
 
 -- Graphic components
-require("components/graphic/drawableComponent")
-require("components/graphic/drawablePolygonComponent")
+require("components/graphic/Drawable")
+require("components/graphic/DrawablePolygon")
 
 -- Logic components
-require("components/logic/timeComponent")
+require("components/logic/Timing")
 
 -- Particle components
-require("components/particle/particleComponent")
-require("components/particle/particleTimerComponent")
+require("components/particle/Particle")
+require("components/particle/ParticleTimerComponent")
 
 -- Identifier components
 
-require("components/identifier/isCircle")
+require("components/identifier/IsCircle")
 
 -- Events
-require("events/keyPressed")
-require("events/mousePressed")
+require("events/KeyPressed")
+require("events/MousePressed")
 
 -- Collisions
-require("collisions/polygonCircleCollision")
+require("collisions/PolygonCircleCollision")
 
 function love.load()
 
@@ -101,10 +101,10 @@ function love.load()
     for i = 1, 20, 1 do
         entity = Entity()
         local x, y = love.math.random(100, 900), love.math.random(150, 600)
-        entity:add(DrawablePolygonComponent(world, x, y, 100, 10, "static", wall))
-        entity:add(TimeComponent(love.math.random(0, 5000)))
-        entity:add(PositionComponent(x, y))
-        entity:get("DrawablePolygonComponent").fixture:setUserData(entity)
+        entity:add(DrawablePolygon(world, x, y, 100, 10, "static", wall))
+        entity:add(Timing(love.math.random(0, 5000)))
+        entity:add(Position(x, y))
+        entity:get("DrawablePolygon").fixture:setUserData(entity)
         engine:addEntity(entity)
     end
 end
