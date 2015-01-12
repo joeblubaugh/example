@@ -39,13 +39,13 @@ function MainKeySystem:fireEvent(event)
             engine:addEntity(entity)
         end
     elseif  event.key == "d" then
-        for index, entity in pairs(engine:getEntityList("IsCircle")) do
+        for index, entity in pairs(engine:getEntitiesWithComponent("IsCircle")) do
             entity:get("Physic").body:destroy()
             engine:removeEntity(entity)
         end
     elseif event.key == "e" then
         engine:stopSystem("CircleDrawSystem") 
     elseif event.key == "w" then
-        engine:startSystem(CircleDrawSystem(), "draw", 2) 
+        engine:startSystem("CircleDrawSystem") 
     end
 end
