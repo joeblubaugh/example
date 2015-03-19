@@ -1,6 +1,6 @@
 # Lovetoys-example
 
-This is a small example on how to use the Lovetoys in combination with love2d.  
+This is a small example game that shows how to use the lovetoys in practice.
 
 ## Component:
 [position.lua](https://github.com/lovetoys/Lovetoys-examples/blob/master/components/physic/position.lua): Basic Structure of a component.
