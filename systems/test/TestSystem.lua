@@ -11,8 +11,10 @@ TestSystem = class("TestSystem", System)
 function TestSystem:fireEvent(event)
     if (event.key == "t") then
         print("Test is Starting")
-        multi = MultipleRequirementsSystem()
-        engine:addSystem(multi)
+        if not multi then
+            multi = MultipleRequirementsSystem()
+            engine:addSystem(multi)
+        end
 
         newEntities = {}
 
@@ -37,11 +39,6 @@ function TestSystem:fireEvent(event)
 
         print("Entities after adding: ")
         multi:printStuff()
-        print("Removing system")
-        engine:removeSystem("MultipleRequirementsSystem")
-        print("Adding system again")
-        engine:addSystem(multi)
-        multi:printStuff()
         
         print("Removing all the stuff")
         for index, value in pairs(newEntities) do
@@ -49,7 +46,7 @@ function TestSystem:fireEvent(event)
         end
         multi:printStuff()
 
-        engine:removeSystem("MultipleRequirementsSystem")
+        engine:stopSystem("MultipleRequirementsSystem")
 
         print("Test ending")
     end

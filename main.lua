@@ -44,9 +44,6 @@ require("components/identifier/IsCircle")
 require("events/KeyPressed")
 require("events/MousePressed")
 
--- Collisions
-require("collisions/PolygonCircleCollision")
-
 function love.load()
 
     -- Creation of a new world
@@ -64,8 +61,7 @@ function love.load()
     engine = Engine()
     -- A new instance of an EventManger is beeing created.
     eventmanager = EventManager()
-    -- A new instance of a CollisionManager is beeing created.
-    collisionmanager = CollisionManager()
+
     -- New instance of TestSystem. This is just for us. We need to test the newest features of the beautiful lovetoys ;3
     -- If you want to see an implementation of multiple required component constellations check the MultipleRequirementsSystem
     testsystem = TestSystem()
@@ -74,13 +70,8 @@ function love.load()
     mainkeysystem = MainKeySystem()
 
     -- The collisionmanager is beeing registered as a listener for the "BeginContact" event.
-    eventmanager:addListener("BeginContact", {collisionmanager, collisionmanager.fireEvent})
-    eventmanager:addListener("KeyPressed", {mainkeysystem, mainkeysystem .fireEvent})
-    eventmanager:addListener("KeyPressed", {testsystem, testsystem.fireEvent})
-
-    local polygon = PolygonCircleCollision()
-
-    collisionmanager:addCollisionAction(polygon.component1, polygon.component2, polygon)
+    eventmanager:addListener("KeyPressed", mainkeysystem, mainkeysystem .fireEvent)
+    eventmanager:addListener("KeyPressed", testsystem, testsystem.fireEvent)
 
     -- Logic (update) systems are beeing added to the engine
     engine:addSystem(TimerSystem())
@@ -121,8 +112,8 @@ function love.draw()
     love.graphics.print("Press 'a' for spawning timer circles", 10, 10)
     love.graphics.print("Press 's' for spawning circles", 10, 30)
     love.graphics.print("Press 'd' for deleting all spawned circles", 10, 50)
-    love.graphics.print("Press 'e' for removing the CircleDrawSystem", 10, 70)
-    love.graphics.print("Press 'w' for adding the CircleDrawSystem again", 10, 90)
+    love.graphics.print("Press 'e' for stopping the CircleDrawSystem", 10, 70)
+    love.graphics.print("Press 'w' for starting the CircleDrawSystem again", 10, 90)
     engine:draw()
 end 
 
@@ -136,7 +127,5 @@ end
 
 --Collision function
 function beginContact(a, b, coll)
-    -- Dynamic creation of a new instance of BeginContact and firing it to the Eventmanager
-    eventmanager:fireEvent(BeginContact(a, b, coll))
 end
 

@@ -9,5 +9,5 @@ function CircleDrawSystem:draw()
 end
 
 function CircleDrawSystem:requires()
-    return {"Position", "Physic"}
+    return {"Position", "Physic", "IsCircle"}
 end
