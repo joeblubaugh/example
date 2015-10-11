@@ -1,4 +1,4 @@
-IsCircle = class("IsCircle" , Component)
+local IsCircle = Component.create("IsCircle")
 
 function IsCircle:initialize()
 end

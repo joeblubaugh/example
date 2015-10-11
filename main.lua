@@ -1,25 +1,8 @@
 -- Importing lovetoys
 require("lib/lovetoys/lovetoys")
 
--- Logic systems
-require("systems/logic/TimerSystem")
-require("systems/logic/PhysicsPositionSyncSystem")
-
--- Graphic systems
-require("systems/graphic/CircleDrawSystem")
-require("systems/graphic/PolygonDrawSystem")
-require("systems/graphic/TimeDrawSystem")
-
--- Event systems
-require("systems/event/MainKeySystem")
-
--- Particle systems
-require("systems/particle/ParticleDrawSystem")
-require("systems/particle/ParticleUpdateSystem")
-
--- Testing and debugging systems
-require("systems/test/TestSystem")
-require("systems/test/MultipleRequirementsSystem")
+-- Identifier components
+require("components/identifier/IsCircle")
 
 -- Physic components
 require("components/physic/Physic")
@@ -36,13 +19,32 @@ require("components/logic/Timing")
 require("components/particle/Particle")
 require("components/particle/ParticleTimerComponent")
 
--- Identifier components
+-- Logic systems
+TimerSystem = require("systems/logic/TimerSystem")
+PhysicsPositionSyncSystem = require("systems/logic/PhysicsPositionSyncSystem")
 
-require("components/identifier/IsCircle")
+-- Graphic systems
+CircleDrawSystem = require("systems/graphic/CircleDrawSystem")
+PolygonDrawSystem = require("systems/graphic/PolygonDrawSystem")
+TimeDrawSystem = require("systems/graphic/TimeDrawSystem")
+
+-- Event systems
+MainKeySystem = require("systems/event/MainKeySystem")
+
+-- Particle systems
+ParticleDrawSystem = require("systems/particle/ParticleDrawSystem")
+ParticleUpdateSystem = require("systems/particle/ParticleUpdateSystem")
+
+-- Testing and debugging systems
+TestSystem = require("systems/test/TestSystem")
+MultipleRequirementsSystem = require("systems/test/MultipleRequirementsSystem")
+
 
 -- Events
 require("events/KeyPressed")
 require("events/MousePressed")
+
+Component.load({"DrawablePolygon", "Timing", "IsCircle", "Position"})
 
 function love.load()
 
@@ -77,7 +79,7 @@ function love.load()
     engine:addSystem(TimerSystem())
     engine:addSystem(PhysicsPositionSyncSystem())
     engine:addSystem(ParticleUpdateSystem())
-    
+
 
     -- Drawing systems are beeing added to the engine
     engine:addSystem(PolygonDrawSystem())
@@ -115,7 +117,7 @@ function love.draw()
     love.graphics.print("Press 'e' for stopping the CircleDrawSystem", 10, 70)
     love.graphics.print("Press 'w' for starting the CircleDrawSystem again", 10, 90)
     engine:draw()
-end 
+end
 
 function love.keypressed(key, isrepeat)
     eventmanager:fireEvent(KeyPressed(key, isrepeat))

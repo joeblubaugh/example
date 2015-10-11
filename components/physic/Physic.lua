@@ -1,4 +1,4 @@
-Physic = class("Physic", Component)
+local Physic = Component.create("Physic")
 
 function Physic:initialize(body, fixture, shape)
     self.body = body

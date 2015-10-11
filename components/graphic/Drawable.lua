@@ -1,4 +1,4 @@
-Drawable = class("Drawable")
+local Drawable = Component.create("Drawable")
 
 function Drawable:initialize(image, r, sx, sy, ox, oy)
     self.image = image

@@ -1,4 +1,4 @@
-MultipleRequirementsSystem = class("MultipleRequirementsSystem", System)
+local MultipleRequirementsSystem = class("MultipleRequirementsSystem", System)
 
 function MultipleRequirementsSystem:update()
 
@@ -25,7 +25,7 @@ function MultipleRequirementsSystem:printStuff()
     print("pool3 : " .. table.count(self.targets["pool3"]))
 end
 
-function table.count(list) 
+function table.count(list)
     local counter = 0
     for index, value in pairs(list) do
         counter = counter + 1
@@ -33,3 +33,4 @@ function table.count(list)
     return counter
 end
 
+return MultipleRequirementsSystem

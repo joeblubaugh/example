@@ -1,4 +1,6 @@
-MainKeySystem = class("MainKeySystem", System)
+Component.load({"Timing", "IsCircle", "Position", "Physic"})
+
+local MainKeySystem = class("MainKeySystem", System)
 
 function MainKeySystem:fireEvent(event)
     if event.key == "s" then
@@ -7,13 +9,13 @@ function MainKeySystem:fireEvent(event)
             local x, y = love.math.random(0, 1000), love.math.random(0, 600)
             entity:add(Position(x, y))
 
-            local body = love.physics.newBody(world, x, y, "dynamic")
-            local shape = love.physics.newCircleShape(5) 
-            local fixture = love.physics.newFixture(body, shape, 1)  
-            fixture:setRestitution(0.9)  
+            local body = love.physics.newBody(_G.world, x, y, "dynamic")
+            local shape = love.physics.newCircleShape(5)
+            local fixture = love.physics.newFixture(body, shape, 1)
+            fixture:setRestitution(0.9)
             fixture:setUserData(entity)
             body:setMass(2)
-                
+
             entity:add(Physic(body, fixture, shape ))
             entity:add(IsCircle())
 
@@ -27,12 +29,12 @@ function MainKeySystem:fireEvent(event)
             entity:add(Position(x, y))
 
             local body = love.physics.newBody(world, x, y, "dynamic")
-            local shape = love.physics.newCircleShape(5) 
-            local fixture = love.physics.newFixture(body, shape, 0)  
+            local shape = love.physics.newCircleShape(5)
+            local fixture = love.physics.newFixture(body, shape, 0)
             fixture:setUserData(entity)
-            fixture:setRestitution(1)  
+            fixture:setRestitution(1)
             body:setMass(2)
-                
+
             entity:add(Physic(body, fixture, shape ))
             entity:add(IsCircle())
 
@@ -44,8 +46,9 @@ function MainKeySystem:fireEvent(event)
             engine:removeEntity(entity)
         end
     elseif event.key == "e" then
-        engine:stopSystem("CircleDrawSystem") 
+        engine:stopSystem("CircleDrawSystem")
     elseif event.key == "w" then
-        engine:startSystem("CircleDrawSystem") 
+        engine:startSystem("CircleDrawSystem")
     end
 end
+return MainKeySystem

@@ -1,4 +1,4 @@
-function table.count(list) 
+function table.count(list)
     local counter = 0
     for index, value in pairs(list) do
         counter = counter + 1
@@ -6,7 +6,7 @@ function table.count(list)
     return counter
 end
 
-TestSystem = class("TestSystem", System)
+local TestSystem = class("TestSystem", System)
 
 function TestSystem:fireEvent(event)
     if (event.key == "t") then
@@ -20,7 +20,7 @@ function TestSystem:fireEvent(event)
 
         print("Entities before adding: ")
         multi:printStuff()
-        
+
         print("Adding test entities 1")
         for i = 1, 15, 1 do
             entity = Entity()
@@ -39,7 +39,7 @@ function TestSystem:fireEvent(event)
 
         print("Entities after adding: ")
         multi:printStuff()
-        
+
         print("Removing all the stuff")
         for index, value in pairs(newEntities) do
             engine:removeEntity(value)
@@ -52,5 +52,4 @@ function TestSystem:fireEvent(event)
     end
 end
 
-
-
+return TestSystem

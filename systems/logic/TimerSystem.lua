@@ -1,5 +1,4 @@
-TimerSystem = class("TimerSystem", System)
-
+local TimerSystem = class("TimerSystem", System)
 
 function TimerSystem:update(dt)
 	for index, value in pairs(self.targets) do
@@ -12,3 +11,4 @@ function TimerSystem:requires()
 	return {"Timing", "Position"}
 end
 
+return TimerSystem

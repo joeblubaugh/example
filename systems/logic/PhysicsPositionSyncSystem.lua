@@ -1,5 +1,5 @@
 -- Synchronizes the Position Component with the Position of the Body Component, if an Entity has both.
-PhysicsPositionSyncSystem = class("PhysicsPositionSyncSystem", System)
+local PhysicsPositionSyncSystem = class("PhysicsPositionSyncSystem", System)
 
 function PhysicsPositionSyncSystem:update(dt)
     -- Syncs the Position with the Physic. Physic is the primary component.
@@ -12,3 +12,5 @@ end
 function PhysicsPositionSyncSystem:requires()
     return {"Physic", "Position"}
 end
+
+return PhysicsPositionSyncSystem

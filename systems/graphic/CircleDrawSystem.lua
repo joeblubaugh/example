@@ -1,4 +1,4 @@
-CircleDrawSystem = class("CircleDrawSystem", System)
+local CircleDrawSystem = class("CircleDrawSystem", System)
 
 function CircleDrawSystem:draw()
     for i, v in pairs(self.targets) do
@@ -11,3 +11,5 @@ end
 function CircleDrawSystem:requires()
     return {"Position", "Physic", "IsCircle"}
 end
+
+return CircleDrawSystem

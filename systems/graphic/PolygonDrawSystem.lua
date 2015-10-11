@@ -1,4 +1,4 @@
-PolygonDrawSystem = class("PolygonDrawSystem", System)
+local PolygonDrawSystem = class("PolygonDrawSystem", System)
 
 function PolygonDrawSystem:draw()
     love.graphics.setColor(0, 255, 0, 50)
@@ -11,3 +11,5 @@ end
 function PolygonDrawSystem:requires()
     return {"DrawablePolygon"}
 end
+
+return PolygonDrawSystem

@@ -1,6 +1,6 @@
-TimeDrawSystem = class("TimeDrawSystem", System)
+local TimeDrawSystem = class("TimeDrawSystem", System)
 
-function TimeDrawSystem:draw() 
+function TimeDrawSystem:draw()
 	love.graphics.setColor(255,255,255,255)
 	for index, value in pairs(self.targets) do
 		local position = value:get("Position")
@@ -13,3 +13,4 @@ function TimeDrawSystem:requires()
 	return {"Timing", "Position"}
 end
 
+return TimeDrawSystem
