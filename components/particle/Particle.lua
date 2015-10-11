@@ -1,5 +1,5 @@
 Particle = class("Particle")
 
-function Particle:__init(image, buffer)
+function Particle:initialize(image, buffer)
     self.particle = love.graphics.newParticleSystem(image, buffer)
 end

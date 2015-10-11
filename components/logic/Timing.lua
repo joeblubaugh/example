@@ -1,5 +1,5 @@
 Timing = class("Timing", Component)
 
-function Timing:__init(time)
+function Timing:initialize(time)
 	self.timer = time
 end
