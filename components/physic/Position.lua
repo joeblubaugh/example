@@ -1,6 +1,6 @@
 Position = class("Position", Component)
 
-function Position:__init(x, y)
+function Position:initialize(x, y)
     self.x = x
     self.y = y
 end

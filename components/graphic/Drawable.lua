@@ -1,6 +1,6 @@
 Drawable = class("Drawable")
 
-function Drawable:__init(image, r, sx, sy, ox, oy)
+function Drawable:initialize(image, r, sx, sy, ox, oy)
     self.image = image
     self.r = r
     if sx then self.sx = sx  end

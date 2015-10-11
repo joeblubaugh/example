@@ -1,4 +1,4 @@
 IsCircle = class("IsCircle" , Component)
 
-function IsCircle:__init()
+function IsCircle:initialize()
 end
