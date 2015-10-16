@@ -44,7 +44,7 @@ MultipleRequirementsSystem = require("systems/test/MultipleRequirementsSystem")
 require("events/KeyPressed")
 require("events/MousePressed")
 
-Component.load({"DrawablePolygon", "Timing", "IsCircle", "Position"})
+local DrawablePolygon, Timing, IsCircle, Position = Component.load({"DrawablePolygon", "Timing", "IsCircle", "Position"})
 
 function love.load()
 

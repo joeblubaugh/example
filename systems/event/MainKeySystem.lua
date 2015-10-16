@@ -1,4 +1,4 @@
-Component.load({"Timing", "IsCircle", "Position", "Physic"})
+local Timing, IsCircle, Position, Physic = Component.load({"Timing", "IsCircle", "Position", "Physic"})
 
 local MainKeySystem = class("MainKeySystem", System)
 
