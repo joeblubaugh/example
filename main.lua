@@ -1,5 +1,9 @@
 -- Importing lovetoys
-require("lib/lovetoys/lovetoys")
+lovetoys = require("lib/lovetoys/lovetoys")
+lovetoys.initialize({
+    globals = true,
+    debug = true
+})
 
 -- Identifier components
 require("components/identifier/IsCircle")
