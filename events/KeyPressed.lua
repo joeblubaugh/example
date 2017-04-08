@@ -2,5 +2,5 @@ KeyPressed = class("KeyPressed")
 
 function KeyPressed:initialize(key, isrepeat)
     self.key = key
-    self.u = u
+    self.isrepeat = isrepeat
 end
